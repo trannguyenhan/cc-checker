@@ -1,10 +1,11 @@
-import os, requests, time, urllib3
+import os, requests, time, urllib3, sys
 from datetime import datetime
 from termcolor import colored
  
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
  
-ccFile = "cc.txt"
+#ccFile = sys.argv[1] #usage python3 checker.py file.txt
+ccFile = input("Credit Card list with format ccNumber|expMonth|expYear|cvc: ") # making simple with input
 outputFile = "cc_checked_{}.txt".format(int(datetime.timestamp(datetime.now())))
 checkerAPIURL = "https://www.xchecker.cc/api.php?cc={}|{}|{}|{}"
 headers = { 
@@ -55,7 +56,7 @@ def main():
                                 output += "|" + data["expMonth"]
                                 output += "/" + data ["expYear"]
                             output += "|" + data["status"] + "|" + data["details"]
-                            output += "--->> " + data["bankName"]
+                            #output += "--->> " + data["bankName"] //Error while bankname is not detected
                         else:
                             output = "{} => {}".format(ccNumber, data["error"])
                         writeFileOutput(output, outputFile)
