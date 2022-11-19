@@ -1,25 +1,36 @@
 # cc-checker
-**Best 2022-2023 API CC Checker in Python Script (without STRIPE API) ((PROXYLESS))**
+**💳 Best Credit Card Checker - NO SK & Proxyless**
 
-###### How to check CCS?
-Create cc.txt in current directory script.
+
+
+
+**⭐ NEW API v2 -> x2 BETTER CHECKING**
+
+
+
+
+
+###### How to check CCS? 
+🗨️ Create cc.txt in current directory script.
 > CC FORMAT:
 ```
 ccNumber|expMonth|expYear|cvc
 ccNumber|expMonth|expYear|cvc
 ```
 
-type in cmd 
+type in cmd ⌨️
 > py checker.py
 
 
 ## CC Gen
-Best cc gen: [BINCHECK.io](https://bincheck.io/credit-card-generator)
+Best cc gen: [View](https://bincheck.io/credit-card-generator) 💳
 
-Best BINLIST: [BINCHECK.org](https://bincheck.org/)
+Best BINLIST: [View](https://bincheck.org/) 🏦
+
+Best CC Combo (FREE 3,7k): [Download](https://paste.fo/c91538c11ab2) ✉️
 
 
-**REMEMBER TO INSTALL DEPENDENCIES!**
+**REMEMBER TO INSTALL DEPENDENCIES!** ↩️
 ```
 Install python3 and dependencies (pip3 install colored, pip3 install requests)
 ```
