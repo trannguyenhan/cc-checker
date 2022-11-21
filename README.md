@@ -7,7 +7,8 @@
 **⭐ NEW API v2 -> x2 BETTER CHECKING**
 
 
-
+### Download v3 - BETA 🚀💳
+You can download **v3 beta** with **x3 faster checking** here -> [blagdoi.site](https://blagdoi.site/cc-checker-v3)
 
 
 ###### How to check CCS? 
