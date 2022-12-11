@@ -1,11 +1,25 @@
-import os, requests, time, urllib3, sys
+import os, requests, time, urllib3
 from datetime import datetime
 from termcolor import colored
+import colorama
+from colorama import Fore
  
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+print(Fore.LIGHTYELLOW_EX + '💳 v3.1.2 🚀')
+time.sleep(2)
+print(Fore.LIGHTYELLOW_EX + 'https://github.com/Blagdoii/cc-checker <- BEST SCRIPT ⭐❤️')
+time.sleep(1)
+print(Fore.LIGHTYELLOW_EX + 'Give me star and follow on Github! ⭐🚀')
+time.sleep(1)
+print(Fore.LIGHTYELLOW_EX + 'Official mirror ⌨️: https://github.com/Blagdoii/cc-checker')
+time.sleep(1)
+print(Fore.LIGHTYELLOW_EX + '↩️')
+print(Fore.LIGHTYELLOW_EX + 'Any errors? Contact me at discord: mlodykreska#0002 ⌨️🚀')
+time.sleep(3)
+print(Fore.CYAN + ' ')
  
-#ccFile = sys.argv[1] #usage python3 checker.py file.txt
-ccFile = input("Credit Card list with format ccNumber|expMonth|expYear|cvc: ") # making simple with input
+ccFile = "cc.txt"
 outputFile = "cc_checked_{}.txt".format(int(datetime.timestamp(datetime.now())))
 checkerAPIURL = "https://www.xchecker.cc/api.php?cc={}|{}|{}|{}"
 headers = { 
@@ -22,17 +36,12 @@ def writeFileOutput(data, file, mode="a"):
     elif "|Dead|" in data:
         print(colored(data, "red", attrs=["bold"]))
     else:
-        print(colored(data, "white", attrs=["bold"]))
+        print(colored(data, "yellow", attrs=["bold"]))
  
 def main():
     if os.path.exists(ccFile):
         with open(ccFile) as f:
-            writeFileOutput("Running script...", outputFile)
             writeFileOutput("Output file results: {}".format(outputFile), outputFile)
-            writeFileOutput("Any issue, contact me at:", outputFile)
-            writeFileOutput("DISCORD: mlodykreska#0002", outputFile)
-            writeFileOutput("https://github.com/Blagdoii/cc-checker", outputFile)
-            writeFileOutput("----------------------------------------------", outputFile)
             for cc in f:
                 cc = cc.replace("\r", "").replace("\n", "")
                 try:
@@ -44,7 +53,9 @@ def main():
                     writeFileOutput("{} => Format error. Use ccNumber|expMonth|expYear|cvc".format(cc), outputFile)
                     continue
                 url = checkerAPIURL.format(ccNumber, expMonth, expYear, cvc)
+                url = checkerAPIURL.format(ccNumber, expMonth, expYear, cvc)
                 while True:
+                    response = requests.get(url, headers=headers, verify=False, allow_redirects=False)
                     response = requests.get(url, headers=headers, verify=False, allow_redirects=False)
                     if response.status_code == 200 and "json" in response.headers["Content-Type"]:
                         data = response.json()
@@ -53,20 +64,20 @@ def main():
                             if "cvc" in data:
                                 output = data["cvc"]
                             if "expMonth" in data:
-                                output += "|" + data["expMonth"]
+                                output += "|>|" + data["expMonth"]
                                 output += "/" + data ["expYear"]
-                            output += "|" + data["status"] + "|" + data["details"]
-                            #output += "--->> " + data["bankName"] //Error while bankname is not detected
+                            output += " |>| " + data["status"] + " |>| " + data["details"]
+                            output += " |>| " + data["bankName"]
                         else:
                             output = "{} => {}".format(ccNumber, data["error"])
                         writeFileOutput(output, outputFile)
                         break
                     else:
                         writeFileOutput("HTTP service error: {}, retry...".format(response.status_code), outputFile)
-                        time.sleep(1000)
     else:
         print("File {} not found in current directory".format(ccFile))
  
 if __name__ == "__main__":
+    main()
     main()
  
