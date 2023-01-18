@@ -15,11 +15,10 @@
 > CC FORMAT:
 ```
 ccNumber|expMonth|expYear|cvc
-ccNumber|expMonth|expYear|cvc
 ```
 
 type in cmd ⌨️
-> py checker.py
+> `py checker.py`
 
 
 ## CC Gen
@@ -27,7 +26,6 @@ Best cc gen: [View](https://bincheck.io/credit-card-generator) 💳
 
 Best BINLIST: [View](https://bincheck.org/) 🏦
 
-Best CC Combo (FREE 3,7k): [Download](https://paste.fo/c91538c11ab2) ✉️
 
 
 **REMEMBER TO INSTALL DEPENDENCIES!** ↩️
