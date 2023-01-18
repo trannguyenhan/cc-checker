@@ -3,8 +3,7 @@
 
 
 
-
-**⭐ NEW API v2 -> x2 BETTER CHECKING**
+`I'm already announcing a new version of the checker because apparently the API is broken XD`
 
 
 
