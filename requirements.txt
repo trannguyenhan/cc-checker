@@ -1,0 +1,7 @@
+certifi
+charset-normalizer
+colored
+idna
+requests
+termcolor
+urllib3

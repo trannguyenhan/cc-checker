@@ -12,11 +12,11 @@ outputFile = "cc_checked_{}.txt".format(int(datetime.timestamp(datetime.now())))
 
 # get output file and input file from command line/ terminal
 nArgv = len(sys.argv)
-if nArgv > 0:
-    ccFile = sys.argv[0]
+if nArgv > 1:
+    ccFile = sys.argv[1]
 
-if nArgv > 1: 
-    outputFile = sys.argv[1]
+if nArgv > 2: 
+    outputFile = sys.argv[2]
 
 # define api check cc and header
 checkerAPIURL = "https://www.xchecker.cc/api.php?cc={}|{}|{}|{}"
@@ -29,8 +29,8 @@ def handleOutput(data, file, mode="a"):
     f = open(file, mode)
     
     if "|Live|" in data:
-        print(colored(data, "green", attrs=["bold"]))
         f.write("{}\n".format(data)) # write to ouput if cc live
+        print(colored(data, "green", attrs=["bold"]))
     elif "|Dead|" in data:
         print(colored(data, "red", attrs=["bold"]))
     else:
@@ -55,6 +55,8 @@ def main():
                 url = checkerAPIURL.format(ccNumber, expMonth, expYear, cvc)
                 url = checkerAPIURL.format(ccNumber, expMonth, expYear, cvc)
                 while True:
+                    print("Sleep, avoid block by api ....")
+                    time.sleep(2)
                     response = requests.get(url, headers=headers, verify=False, allow_redirects=False)
                     response = requests.get(url, headers=headers, verify=False, allow_redirects=False)
                     if response.status_code == 200 and "json" in response.headers["Content-Type"]:
@@ -79,4 +81,3 @@ def main():
  
 if __name__ == "__main__":
     main()
- 
