@@ -1,37 +1,14 @@
-# NullChecker
-**💳 Best Credit Card Checker - NO SK & Proxyless**
+# Credit Card Checker
+**Credit Card Checker - NO SK & Proxyless**
 
+## Update requirements.txt
 
-
-`I'm already announcing a new version of the checker because apparently the API is broken XD`
-
-
-
-
-
-
-###### How to check CCS? 
-🗨️ Create cc.txt in current directory script.
-> CC FORMAT:
-```
-ccNumber|expMonth|expYear|cvc
+```bash
+pip freeze > requirements.txt
 ```
 
-type in cmd ⌨️
-> `py checker.py`
+## Install library
 
-
-## CC Gen
-Best cc gen: [View](https://bincheck.io/credit-card-generator) 💳
-
-Best BINLIST: [View](https://bincheck.org/) 🏦
-
-
-
-**REMEMBER TO INSTALL DEPENDENCIES!** ↩️
+```bash
+pip install -r requirement.txt
 ```
-Install python3 and dependencies (pip3 install colored, pip3 install requests)
-```
-
-⭐ **MY DISCORD:**
-> mlodykreska#0002
